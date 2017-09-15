@@ -159,7 +159,11 @@ main(int argc,                    /* I - Number of command-line arguments */
          * Try to open the print file...
          */
 
+#if __OS2__
+        if ((print_fd = open(argv[6], O_RDONLY | O_BINARY)) < 0) {
+#else
         if ((print_fd = open(argv[6], O_RDONLY)) < 0) {
+#endif
             perror("ERROR: unable to open print file");
             return CUPS_BACKEND_FAILED;
         }
