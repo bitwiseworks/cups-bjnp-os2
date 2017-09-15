@@ -33,7 +33,9 @@ static int create_broadcast_socket(const http_addr_t *local_addr)
 {
     int sockfd = -1;
     int broadcast = 1;
+#ifdef ENABLE_IPV6
     int ipv6_v6only = 1;
+#endif
 
 
     if ((sockfd = socket(local_addr-> addr.sa_family, SOCK_DGRAM, 0)) == -1) {
@@ -273,7 +275,9 @@ static void add_printer(http_addr_t *printer_sa, bjnp_response_t *resp,
                         int *no_printers, struct printer_list *printers)
 {
     char mac_address_string[BJNP_SERIAL_MAX];
+#ifdef ENABLE_IPV6
     int i;
+#endif
 
     /* create serial/mac_address string */
 

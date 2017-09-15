@@ -29,6 +29,9 @@
 #include <cups/sidechannel.h>
 #endif
 
+#ifdef __OS2__
+typedef int socklen_t;
+#endif
 /*
  *  BJNP definitions
  */
