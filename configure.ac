@@ -28,8 +28,6 @@ IFS=$ac_save_IFS
 
 dnl Checks for required library functions.
 AC_CHECK_FUNCS(ftime \
-               getaddrinfo \
-               getnameinfo \
                gethostname \
                inet_ntoa \
                inet_ntop \

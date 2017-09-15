@@ -26,6 +26,9 @@
 #include "bjnp-io.h"
 #include "bjnp-commands.h"
 #include "bjnp-io.h"
+#ifdef __OS2__
+#include "getaddrinfo.h"
+#endif
 
 #define DES_TOKEN "DES:"
 
@@ -93,7 +96,9 @@ int get_protocol_family(const http_addr_t sa)
 void get_address_info(const http_addr_t *addr, char *addr_string, int *port,
                       char *family)
 {
+#ifdef ENABLE_IPV6
     char tmp_addr[BJNP_HOST_MAX];
+#endif
 
     if (addr->addr.sa_family == AF_INET) {
         inet_ntop(AF_INET, &(addr -> ipv4.sin_addr.s_addr), addr_string,

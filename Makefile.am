@@ -4,6 +4,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = --with-cupsbackenddir=/tmp
 
 cupsbackend_PROGRAMS = bjnp
 bjnp_SOURCES = \
+	getaddrinfo.c \
 	bjnp.c \
 	bjnp-runloop.c \
 	bjnp-io.c \
