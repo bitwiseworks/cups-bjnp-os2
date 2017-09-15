@@ -1,0 +1,7 @@
+autom4te.cache
+INSTALL
+Makefile.in
+aclocal.m4
+config.h.in*
+configure
+missing
